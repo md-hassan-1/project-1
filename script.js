@@ -1,42 +1,70 @@
 function addtask(){
-    let input  = document.querySelector("input")
+    let input= document.querySelector(".input")
+    let date =document.querySelector("#date")
     let value = input.value
+    let dateValue= date.value
 
     if(value==""){
-        alert("type to text ")
+        alert('brother type to task')
         return
-
     }
     console.log(value)
-    // let html = ` 
+
+  
+
+    // let html =`
     // <li class="list-item">
-    // <span>${value}</span>
-    // <button onclick="remove(this)">x</button>
-    // </li>
-    // list.innerHTML += html
+    //         <span>${value}</span>
+    //         <button onclick="remove(this)">x</button>
+    //     </li>
+     //   lis.innerHTML +=html
+        
     // `
+    let li =document.createElement("li")
+    let span =document.createElement("span")
+    let spen =document.createElement("span")
+    let button =document.createElement("button")
 
-let li = document.createElement('li')
-let span = document.createElement('span')
-let button = document.createElement('button')
+    li.classList.add("list-item")
+    span.innerText=value
+    span.innerText+=dateValue
+    button.innerText="x"
+    button.setAttribute("onclick","remove(this)")
 
-li.classList.add('list-item')
-span.innerText = value
-button.innerText = "x"
-button.setAttribute("onclick","remove(this)")
+    li.append(span)
+    li.append(spen)
+    li.append(button)
+    let lis = document.querySelector(".list")
+      lis.append(li)
+   
 
-li.append(span)
-li.append(button)
+input.value=""
+date.value=""
+      
+      
 
-let list = document.querySelector(".list")
-list.append(li)
 
 
-input.value = ''
+    }
+//     function cut(){
+//     let del = document.querySelector("#date")
+//     del.remove()
+// }
+// function cute(){
+//     let del = document.querySelector("#date")
+//     del.show()
+// }
 
-}
-
-function remove(bn){
-    console.log('remove')
-    bn.parentNode.remove()
-}
+    function remove(btn){
+        
+        console.log('remove')
+        btn.parentNode.remove()
+        // let  del  = document.querySelector("#date")
+        // del.innerHTML=`<input  id="date" type="date">`    
+        // let date = new Date()
+        // let d = date.getDate()
+        // let month = date.getMonth()
+        // let year = date.getFullYear()
+        // console.log(d,-month,-year)dcfdscsds
+    }
+   
